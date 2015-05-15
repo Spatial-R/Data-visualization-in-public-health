@@ -185,13 +185,13 @@ m1 &lt;- mPlot(
 )
 m1$set( pointSize = 0, lineWidth = 1)
 m1$set( hideHover = &quot;auto&quot; )
-m1$print(&quot;chart2&quot;)</code></pre>
-<div id="chart2" class="rChart morris">
+m1$show('inline', cdn = TRUE)</code></pre>
+<div id="chart12a4303b3f03" class="rChart morris">
 
 </div>
 <script type="text/javascript">
     var chartParams = {
- "element": "chart2",
+ "element": "chart12a4303b3f03",
 "width":            600,
 "height":            400,
 "xkey": "date",
@@ -1779,7 +1779,7 @@ m1$print(&quot;chart2&quot;)</code></pre>
 "pointSize":              0,
 "lineWidth":              1,
 "hideHover": "auto",
-"id": "chart2",
+"id": "chart12a4303b3f03",
 "labels": [ "Hangzhou", "Shenzheng" ] 
 },
       chartType = "Line"
@@ -6942,37 +6942,59 @@ h1$plotOptions(
   )
 )
 
-h1$print(&quot;chart5&quot;)</code></pre>
-<div id="chart5" class="rChart highcharts">
-
-</div>
-<script type="text/javascript">
+h1$show(&quot;iframesrc&quot;, cdn = TRUE)</code></pre>
+<iframe srcdoc="
+&lt;!doctype HTML&gt;
+&lt;meta charset = 'utf-8'&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    
+    &lt;script src='http://code.jquery.com/jquery-1.9.1.min.js' type='text/javascript'&gt;&lt;/script&gt;
+    &lt;script src='http://code.highcharts.com/highcharts.js' type='text/javascript'&gt;&lt;/script&gt;
+    &lt;script src='http://code.highcharts.com/highcharts-more.js' type='text/javascript'&gt;&lt;/script&gt;
+    &lt;script src='http://code.highcharts.com/modules/exporting.js' type='text/javascript'&gt;&lt;/script&gt;
+    
+    &lt;style&gt;
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 600px;
+      height: 400px;
+    }  
+    &lt;/style&gt;
+    
+  &lt;/head&gt;
+  &lt;body &gt;
+    
+    &lt;div id = 'chart12a42c31419' class = 'rChart highcharts'&gt;&lt;/div&gt;    
+    &lt;script type='text/javascript'&gt;
     (function($){
         $(function () {
             var chart = new Highcharts.Chart({
- "dom": "chart5",
-"width":            600,
-"height":            400,
-"credits": {
- "href": null,
-"text": null 
+ &quot;dom&quot;: &quot;chart12a42c31419&quot;,
+&quot;width&quot;:            600,
+&quot;height&quot;:            400,
+&quot;credits&quot;: {
+ &quot;href&quot;: null,
+&quot;text&quot;: null 
 },
-"exporting": {
- "enabled": false 
+&quot;exporting&quot;: {
+ &quot;enabled&quot;: false 
 },
-"title": {
- "text": null 
+&quot;title&quot;: {
+ &quot;text&quot;: null 
 },
-"yAxis": [
+&quot;yAxis&quot;: [
  {
- "title": {
- "text": "aqi" 
+ &quot;title&quot;: {
+ &quot;text&quot;: &quot;aqi&quot; 
 } 
 } 
 ],
-"series": [
+&quot;series&quot;: [
  {
- "data": [
+ &quot;data&quot;: [
  [
   1388534400000,
 119 
@@ -8234,14 +8256,14 @@ h1$print(&quot;chart5&quot;)</code></pre>
 112 
 ] 
 ],
-"name": "Hangzhou",
-"type": "line",
-"marker": {
- "radius":              3 
+&quot;name&quot;: &quot;Hangzhou&quot;,
+&quot;type&quot;: &quot;line&quot;,
+&quot;marker&quot;: {
+ &quot;radius&quot;:              3 
 } 
 },
 {
- "data": [
+ &quot;data&quot;: [
  [
   1388534400000,
 109 
@@ -9499,14 +9521,14 @@ h1$print(&quot;chart5&quot;)</code></pre>
 52 
 ] 
 ],
-"name": "Shenzheng",
-"type": "line",
-"marker": {
- "radius":              3 
+&quot;name&quot;: &quot;Shenzheng&quot;,
+&quot;type&quot;: &quot;line&quot;,
+&quot;marker&quot;: {
+ &quot;radius&quot;:              3 
 } 
 },
 {
- "data": [
+ &quot;data&quot;: [
  [
   1388534400000,
 186 
@@ -10768,37 +10790,46 @@ h1$print(&quot;chart5&quot;)</code></pre>
 52 
 ] 
 ],
-"name": "Wuhan",
-"type": "line",
-"marker": {
- "radius":              3 
+&quot;name&quot;: &quot;Wuhan&quot;,
+&quot;type&quot;: &quot;line&quot;,
+&quot;marker&quot;: {
+ &quot;radius&quot;:              3 
 } 
 } 
 ],
-"xAxis": [
+&quot;xAxis&quot;: [
  {
- "type": "datetime" 
+ &quot;type&quot;: &quot;datetime&quot; 
 } 
 ],
-"subtitle": {
- "text": null 
+&quot;subtitle&quot;: {
+ &quot;text&quot;: null 
 },
-"chart": {
- "zoomType": "x",
-"renderTo": "chart5" 
+&quot;chart&quot;: {
+ &quot;zoomType&quot;: &quot;x&quot;,
+&quot;renderTo&quot;: &quot;chart12a42c31419&quot; 
 },
-"plotOptions": {
- "line": {
- "marker": {
- "enabled": false 
+&quot;plotOptions&quot;: {
+ &quot;line&quot;: {
+ &quot;marker&quot;: {
+ &quot;enabled&quot;: false 
 } 
 } 
 },
-"id": "chart5" 
+&quot;id&quot;: &quot;chart12a42c31419&quot; 
 });
         });
     })(jQuery);
-</script>
+&lt;/script&gt;
+    
+    &lt;script&gt;&lt;/script&gt;    
+  &lt;/body&gt;
+&lt;/html&gt;
+" scrolling="no" seamless class="rChart 
+highcharts
+ " id="iframe-chart12a42c31419">
+</iframe>
+<style>iframe.rChart{ width: 100%; height: 400px;}</style>
 <hr />
 </div>
 </div>

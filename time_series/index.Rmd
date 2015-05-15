@@ -2,7 +2,6 @@
 title: Time Series Visualization in R  
 subtitle: Air pollution data
 author: Bing Zhang
-github: {user: timelyportfolio, repo: rCharts_time_series, branch: "gh-pages"}
 framework: minimal
 mode: selfcontained
 ext_widgets: {rCharts: ["libraries/morris","libraries/nvd3", "libraries/polycharts", "libraries/highcharts","libraries/xcharts", "libraries/rickshaw"]}
@@ -160,7 +159,7 @@ m1 <- mPlot(
 )
 m1$set( pointSize = 0, lineWidth = 1)
 m1$set( hideHover = "auto" )
-m1$print("chart2")
+m1$show('inline', cdn = TRUE)
 ```
 
 <br/><h4>rickshaw example</h4>
@@ -207,7 +206,7 @@ h1$plotOptions(
   )
 )
 
-h1$print("chart5")
+h1$show("iframesrc", cdn = TRUE)
 ```
 
 ---
