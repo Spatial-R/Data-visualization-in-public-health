@@ -41,7 +41,7 @@ knitr::opts_chunk$set(
 library(rCharts)
 ```
 
-First, to build a plot, we need data. For the air quality data, we can obtain it from the [`three ways`](http://spatial-r.github.io/en/2014/06/How-to-get-air-quality-data-from-website/) in my blog. Here, we used the air quality data for the main cities (nearly **113**) in China, 2014. You also can get the data in **my github**[Welcome to **Spatial-R**]. Here is the code to reshape the data and prepare for the plot. 
+First, to build a plot, we need data. For the air quality data, we can obtain it from the [`three ways`](http://spatial-r.github.io/en/2014/06/How-to-get-air-quality-data-from-website/) in my blog. Here, we used the air quality data for the main cities (nearly **113**) in China, 2014. You also can get the data in **my github** [ Welcome to **Spatial-R** ]. Here is the code to reshape the data and prepare for the plot. 
 ```{r,results='markup'}
 library(dplyr);library(reshape);
 AQI<-read.csv("AQI.csv",header=T,stringsAsFactors = F);
@@ -159,7 +159,7 @@ m1 <- mPlot(
 )
 m1$set( pointSize = 0, lineWidth = 1)
 m1$set( hideHover = "auto" )
-m1$show('inline', cdn = TRUE)
+m1$show("iframesrc", cdn = TRUE)
 ```
 
 <br/><h4>rickshaw example</h4>
@@ -177,7 +177,7 @@ r1$layer(
 r1$set( 
   slider = TRUE
 )
-r1$print("chart3")
+r1$show("iframesrc", cdn = TRUE)
 ```
 
 <br/><h4>highcharts example</h4>
