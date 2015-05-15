@@ -1,0 +1,1613 @@
+<!doctype HTML>
+<meta charset = 'utf-8'>
+<html>
+  <head>
+    <link rel='stylesheet' href='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css'>
+    
+    <script src='http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js' type='text/javascript'></script>
+    <script src='https://rawgithub.com/leaflet-extras/leaflet-providers/gh-pages/leaflet-providers.js' type='text/javascript'></script>
+    <script src='http://harrywood.co.uk/maps/examples/leaflet/leaflet-plugins/layer/vector/KML.js' type='text/javascript'></script>
+    
+    <style>
+    .rChart {
+      display: block;
+      margin-left: auto; 
+      margin-right: auto;
+      width: 1600px;
+      height: 800px;
+    }  
+    </style>
+    
+  </head>
+  <body >
+    
+    <div id = 'chartb8058584992' class = 'rChart leaflet'></div>    
+    <script>
+  var spec = {
+ "dom": "chartb8058584992",
+"width":           1600,
+"height":            800,
+"urlTemplate": "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+"layerOpts": {
+ "attribution": "Map data<a href=\"http://openstreetmap.org\">OpenStreetMap</a>\n         contributors, Imagery<a href=\"http://mapbox.com\">MapBox</a>" 
+},
+"center": [           30.3,          120.2 ],
+"zoom":              5,
+"provider": "Stamen.TonerLite",
+"features": [
+ {
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1763,       30.25643 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司解放路连锁店",
+"Add": "杭州市解放路160号一楼",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司解放路连锁店<br>地址:  杭州市解放路160号一楼<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1077,       30.29247 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司文华店",
+"Add": "杭州市文一西路233号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司文华店<br>地址:  杭州市文一西路233号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1344,        30.2829 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司文三店",
+"Add": "杭州市文三路451号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司文三店<br>地址:  杭州市文三路451号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1758,       30.26603 ] 
+},
+"properties": {
+ "Name": "杭州张同泰药业有限公司",
+"Add": "杭州市中山北路99号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州张同泰药业有限公司<br>地址:  杭州市中山北路99号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1726,       30.29295 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司中心连锁店",
+"Add": "杭州市上塘路202-208号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司中心连锁店<br>地址:  杭州市上塘路202-208号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1821,       30.26342 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司存仁堂连锁店",
+"Add": "杭州市庆春路127号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司存仁堂连锁店<br>地址:  杭州市庆春路127号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1548,       30.29752 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司世缘连锁店",
+"Add": "杭州市湖墅南路591号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司世缘连锁店<br>地址:  杭州市湖墅南路591号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.0981,       30.32901 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房有限公司三墩店",
+"Add": "杭州市古墩路1037号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房有限公司三墩店<br>地址:  杭州市古墩路1037号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1162,       30.29642 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司莲花港分店",
+"Add": "杭州市莲花港家园13幢33号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司莲花港分店<br>地址:  杭州市莲花港家园13幢33号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1311,       30.28247 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司翠苑分店",
+"Add": "杭州市万塘路108号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司翠苑分店<br>地址:  杭州市万塘路108号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3061,       30.42967 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司临平保健路分店",
+"Add": "杭州市临平保健路110号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司临平保健路分店<br>地址:  杭州市临平保健路110号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1875,       30.28502 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司糖尿病专业药房",
+"Add": "杭州市朝晖路59号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司糖尿病专业药房<br>地址:  杭州市朝晖路59号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2194,       30.25924 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司下沙迎春路分店",
+"Add": "杭州市迎春路5号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司下沙迎春路分店<br>地址:  杭州市迎春路5号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1172,       30.28531 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司嘉绿苑分店",
+"Add": "杭州市嘉绿苑西33幢底层",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司嘉绿苑分店<br>地址:  杭州市嘉绿苑西33幢底层<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1842,       30.26385 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司肿瘤药房",
+"Add": "杭州市庆春路66号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司肿瘤药房<br>地址:  杭州市庆春路66号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1508,       30.32719 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司延寿堂店",
+"Add": "杭州市拱墅区温州路35号二楼",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司延寿堂店<br>地址:  杭州市拱墅区温州路35号二楼<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1571,       30.27794 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司杭州天目山路连锁店",
+"Add": "杭州市天目山路45号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司杭州天目山路连锁店<br>地址:  杭州市天目山路45号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1774,       30.24514 ] 
+},
+"properties": {
+ "Name": "杭州胡庆余堂国药号有限公司叶总德堂药店",
+"Add": "杭州市上城区中山中路49号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州胡庆余堂国药号有限公司叶总德堂药店<br>地址:  杭州市上城区中山中路49号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.173,       30.27562 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司康佳连锁店",
+"Add": "杭州市体育场路273号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司康佳连锁店<br>地址:  杭州市体育场路273号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1873,       30.27374 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司建国北路分店",
+"Add": "杭州市建国北路420号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司建国北路分店<br>地址:  杭州市建国北路420号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1758,       30.28282 ] 
+},
+"properties": {
+ "Name": "老百姓大药房连锁（浙江）有限公司国都店",
+"Add": "杭州市朝晖路182号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  老百姓大药房连锁（浙江）有限公司国都店<br>地址:  杭州市朝晖路182号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1891,       30.26967 ] 
+},
+"properties": {
+ "Name": "杭州布衣大药房连锁有限公司",
+"Add": "杭州市下城区凤起路91号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州布衣大药房连锁有限公司<br>地址:  杭州市下城区凤起路91号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1497,       30.29462 ] 
+},
+"properties": {
+ "Name": "浙江同一大药房连锁有限公司文一路连锁店",
+"Add": "杭州市文一路69-71号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江同一大药房连锁有限公司文一路连锁店<br>地址:  杭州市文一路69-71号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2139,       30.20679 ] 
+},
+"properties": {
+ "Name": "杭州千家惠药房有限公司",
+"Add": "杭州市滨江区月明路1118号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州千家惠药房有限公司<br>地址:  杭州市滨江区月明路1118号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1509,        30.2927 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房有限公司莫干山店",
+"Add": "杭州市莫干山路493号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房有限公司莫干山店<br>地址:  杭州市莫干山路493号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1827,       30.25676 ] 
+},
+"properties": {
+ "Name": "杭州环龙药店有限公司",
+"Add": "杭州上城区解放路92号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州环龙药店有限公司<br>地址:  杭州上城区解放路92号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.089,       30.20704 ] 
+},
+"properties": {
+ "Name": "杭州海王星辰健康药房有限公司保俶店",
+"Add": "杭州市西湖区保叔路105号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州海王星辰健康药房有限公司保俶店<br>地址:  杭州市西湖区保叔路105号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1654,       30.30936 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司大关分店",
+"Add": "杭州大关香积寺路225号五楼",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司大关分店<br>地址:  杭州大关香积寺路225号五楼<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1659,       30.24411 ] 
+},
+"properties": {
+ "Name": "杭州永丰堂大药房",
+"Add": "杭州市上城区孝子坊24号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州永丰堂大药房<br>地址:  杭州市上城区孝子坊24号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1761,       30.26219 ] 
+},
+"properties": {
+ "Name": "杭州丛安堂大药房有限公司",
+"Add": "杭州市中山中路541号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州丛安堂大药房有限公司<br>地址:  杭州市中山中路541号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1799,       30.25615 ] 
+},
+"properties": {
+ "Name": "杭州全德堂药房有限公司",
+"Add": "杭州市解放路163号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州全德堂药房有限公司<br>地址:  杭州市解放路163号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1981,       30.27214 ] 
+},
+"properties": {
+ "Name": "杭州凯华大药房有限公司",
+"Add": "杭州市江干区凯旋路254号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州凯华大药房有限公司<br>地址:  杭州市江干区凯旋路254号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.0956,       30.33239 ] 
+},
+"properties": {
+ "Name": "浙江正京元大药房连锁有限公司杭州三墩店",
+"Add": "杭州市西湖区三墩镇灯彩街13、15号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江正京元大药房连锁有限公司杭州三墩店<br>地址:  杭州市西湖区三墩镇灯彩街13、15号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1547,       30.28188 ] 
+},
+"properties": {
+ "Name": "杭州欣舟大药房连锁有限公司马塍路店",
+"Add": "杭州市西湖区马塍路10号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州欣舟大药房连锁有限公司马塍路店<br>地址:  杭州市西湖区马塍路10号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1562,       30.27017 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司杭州保俶路二店",
+"Add": "杭州市西湖区保俶路75号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司杭州保俶路二店<br>地址:  杭州市西湖区保俶路75号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1535,       30.27465 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司杭州保俶路店",
+"Add": "杭州市西湖区保俶路170-2号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司杭州保俶路店<br>地址:  杭州市西湖区保俶路170-2号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1111,       30.33358 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司祥符店",
+"Add": "杭州市拱墅区祥符街道三墩路23号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司祥符店<br>地址:  杭州市拱墅区祥符街道三墩路23号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1802,       30.31045 ] 
+},
+"properties": {
+ "Name": "杭州民生综合经营有限公司康德药店",
+"Add": "杭州市下城区文野巷26、28号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州民生综合经营有限公司康德药店<br>地址:  杭州市下城区文野巷26、28号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1606,       30.27581 ] 
+},
+"properties": {
+ "Name": "杭州广兴堂中医文化保健有限公司环西药店",
+"Add": "杭州市体育场路453号杭州市中医院9号楼一楼",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州广兴堂中医文化保健有限公司环西药店<br>地址:  杭州市体育场路453号杭州市中医院9号楼一楼<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1876,       30.26145 ] 
+},
+"properties": {
+ "Name": "杭州英新大药房有限公司",
+"Add": "杭州市建国中路234号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州英新大药房有限公司<br>地址:  杭州市建国中路234号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1639,       30.19316 ] 
+},
+"properties": {
+ "Name": "杭州松盛药房有限公司",
+"Add": "杭州市滨江区滨盛路4267号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州松盛药房有限公司<br>地址:  杭州市滨江区滨盛路4267号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1109,        30.3063 ] 
+},
+"properties": {
+ "Name": "杭州华源大药房有限公司",
+"Add": "杭州市西湖区萍水西路33号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州华源大药房有限公司<br>地址:  杭州市西湖区萍水西路33号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3432,       30.29293 ] 
+},
+"properties": {
+ "Name": "浙江正京元大药房连锁有限公司多蓝水岸店",
+"Add": "杭州经济技术开发区10号街（东）67号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江正京元大药房连锁有限公司多蓝水岸店<br>地址:  杭州经济技术开发区10号街（东）67号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3884,       30.30915 ] 
+},
+"properties": {
+ "Name": "浙江正京元大药房连锁有限公司杭州下沙一店",
+"Add": "杭州经济技术开发区25号大街1058号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江正京元大药房连锁有限公司杭州下沙一店<br>地址:  杭州经济技术开发区25号大街1058号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1107,       30.28937 ] 
+},
+"properties": {
+ "Name": "浙江正京元大药房连锁有限公司杭州竞舟路店",
+"Add": "杭州市西湖区竞舟路163,165号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江正京元大药房连锁有限公司杭州竞舟路店<br>地址:  杭州市西湖区竞舟路163,165号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.299,       30.31018 ] 
+},
+"properties": {
+ "Name": "杭州百德药店八堡家园分店",
+"Add": "杭州市江干区九堡镇八堡家园19排19号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州百德药店八堡家园分店<br>地址:  杭州市江干区九堡镇八堡家园19排19号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1235,        30.2888 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司文二西路店",
+"Add": "杭州市西湖区文二西路6号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司文二西路店<br>地址:  杭州市西湖区文二西路6号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1334,       30.31529 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司登云店",
+"Add": "杭州市拱墅区登云路236号一楼",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司登云店<br>地址:  杭州市拱墅区登云路236号一楼<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1711,       30.28682 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司杭州文晖店",
+"Add": "杭州市下城区文晖路322号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司杭州文晖店<br>地址:  杭州市下城区文晖路322号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.221,       30.21498 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司杭州江南大道二店",
+"Add": "杭州市滨江区江南大道88-96号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司杭州江南大道二店<br>地址:  杭州市滨江区江南大道88-96号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2085,       30.27636 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司昙花庵路店",
+"Add": "杭州市江干区昙花庵路290号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司昙花庵路店<br>地址:  杭州市江干区昙花庵路290号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.0862,       30.16835 ] 
+},
+"properties": {
+ "Name": "杭州上泗大药房有限公司",
+"Add": "杭州市转塘街道直街8号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州上泗大药房有限公司<br>地址:  杭州市转塘街道直街8号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1816,       30.26632 ] 
+},
+"properties": {
+ "Name": "杭州中联大药房连锁有限公司长庆街分店",
+"Add": "杭州市下城区长庆街8号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  杭州中联大药房连锁有限公司长庆街分店<br>地址:  杭州市下城区长庆街8号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.184,       30.26375 ] 
+},
+"properties": {
+ "Name": "杭州九洲大药房连锁有限公司庆春店",
+"Add": "杭州市庆春路66-109号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州九洲大药房连锁有限公司庆春店<br>地址:  杭州市庆春路66-109号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1882,        30.3553 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司半山店",
+"Add": "杭州市拱墅区杭钢南苑63幢63-4至63-8号",
+"Lb": "二级其他",
+"color": "#68228B",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司半山店<br>地址:  杭州市拱墅区杭钢南苑63幢63-4至63-8号<br>类别:  二级其他</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2057,       30.29045 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司秋涛分店",
+"Add": "杭州市秋涛北路276号",
+"Lb": "二级甲等",
+"color": "#CD3278",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司秋涛分店<br>地址:  杭州市秋涛北路276号<br>类别:  二级甲等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1801,       30.23236 ] 
+},
+"properties": {
+ "Name": "海口大方工贸实业公司杭州分公司大方药店",
+"Add": "杭州市上城区大方伯田家园6号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  海口大方工贸实业公司杭州分公司大方药店<br>地址:  杭州市上城区大方伯田家园6号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1486,       30.28941 ] 
+},
+"properties": {
+ "Name": "杭州立平大药房有限公司",
+"Add": "杭州市西湖区文二路57-1号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州立平大药房有限公司<br>地址:  杭州市西湖区文二路57-1号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1339,       30.31498 ] 
+},
+"properties": {
+ "Name": "浙江同一大药房有限公司和睦新村连锁店",
+"Add": "杭州市赵伍路2号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江同一大药房有限公司和睦新村连锁店<br>地址:  杭州市赵伍路2号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1688,       30.24535 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司河坊街连锁店",
+"Add": "杭州市河坊街413号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司河坊街连锁店<br>地址:  杭州市河坊街413号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1757,       30.24549 ] 
+},
+"properties": {
+ "Name": "杭州胡庆余堂国药号有限公司庆余堂连锁店",
+"Add": "杭州市上城区大井巷95号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州胡庆余堂国药号有限公司庆余堂连锁店<br>地址:  杭州市上城区大井巷95号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1646,       30.21289 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司化仙桥分店",
+"Add": "杭州市化仙桥路2号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司化仙桥分店<br>地址:  杭州市化仙桥路2号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1608,       30.21096 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司复兴路分店",
+"Add": "杭州市复兴路429号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司复兴路分店<br>地址:  杭州市复兴路429号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2862,       30.16299 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司萧山分店",
+"Add": "杭州市育才路育秀园2-3楼营业房12号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司萧山分店<br>地址:  杭州市育才路育秀园2-3楼营业房12号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1428,       30.30484 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司董家新村店",
+"Add": "杭州市莫干山路763号1层2-3间",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司董家新村店<br>地址:  杭州市莫干山路763号1层2-3间<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1203,       30.28276 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司文三路店",
+"Add": "杭州市文三西路146-148号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司文三路店<br>地址:  杭州市文三西路146-148号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1337,       30.26589 ] 
+},
+"properties": {
+ "Name": "杭州百川药店有限公司",
+"Add": "杭州外东山弄66号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州百川药店有限公司<br>地址:  杭州外东山弄66号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1483,       30.28374 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司西溪河下连锁店",
+"Add": "杭州市西溪河下路6号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司西溪河下连锁店<br>地址:  杭州市西溪河下路6号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1605,       30.29939 ] 
+},
+"properties": {
+ "Name": "杭州三九医药连锁有限公司假山路店",
+"Add": "杭州市天时苑12幢2号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州三九医药连锁有限公司假山路店<br>地址:  杭州市天时苑12幢2号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2068,        30.2674 ] 
+},
+"properties": {
+ "Name": "杭州秋涛老百姓大药房有限公司",
+"Add": "杭州市秋涛北路79号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州秋涛老百姓大药房有限公司<br>地址:  杭州市秋涛北路79号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1553,       30.29681 ] 
+},
+"properties": {
+ "Name": "老百姓大药房连锁（浙江）有限公司湖墅店",
+"Add": "杭州市湖墅南路411号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  老百姓大药房连锁（浙江）有限公司湖墅店<br>地址:  杭州市湖墅南路411号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1282,       30.29373 ] 
+},
+"properties": {
+ "Name": "杭州开心大药房有限公司",
+"Add": "杭州市文一路437号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州开心大药房有限公司<br>地址:  杭州市文一路437号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1823,        30.2252 ] 
+},
+"properties": {
+ "Name": "杭州京都大药房有限公司",
+"Add": "杭州市上城区南瓦坊1幢底层",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州京都大药房有限公司<br>地址:  杭州市上城区南瓦坊1幢底层<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1832,        30.2256 ] 
+},
+"properties": {
+ "Name": "杭州华东大药房连锁有限公司秋涛路连锁店",
+"Add": "杭州市秋涛路56号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东大药房连锁有限公司秋涛路连锁店<br>地址:  杭州市秋涛路56号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3115,       30.43036 ] 
+},
+"properties": {
+ "Name": "杭州保济大药店连锁有限公司东湖店",
+"Add": "杭州市余杭区临平九曲营路76-80号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州保济大药店连锁有限公司东湖店<br>地址:  杭州市余杭区临平九曲营路76-80号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1755,       30.26821 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司中山北路分店",
+"Add": "杭州市中山北路175号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司中山北路分店<br>地址:  杭州市中山北路175号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2138,       30.21248 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司中兴花园分店",
+"Add": "杭州市中兴花园紫薇苑商铺8-9号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司中兴花园分店<br>地址:  杭州市中兴花园紫薇苑商铺8-9号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1826,       30.26927 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司新华路分店",
+"Add": "杭州市新华路161号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司新华路分店<br>地址:  杭州市新华路161号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1755,       30.27284 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司屏风街连锁店",
+"Add": "杭州市下城区屏风街98号一楼",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司屏风街连锁店<br>地址:  杭州市下城区屏风街98号一楼<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1745,       30.29293 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司杭州新市街连锁店",
+"Add": "杭州市下城区新市街77号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司杭州新市街连锁店<br>地址:  杭州市下城区新市街77号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1539,       30.27415 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司保俶路连锁店",
+"Add": "杭州市王家弄30-33号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司保俶路连锁店<br>地址:  杭州市王家弄30-33号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.124,       30.28551 ] 
+},
+"properties": {
+ "Name": "杭州布衣大药房连锁有限公司华星路店",
+"Add": "杭州市西湖区嘉绿苑南5幢商铺5-1号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州布衣大药房连锁有限公司华星路店<br>地址:  杭州市西湖区嘉绿苑南5幢商铺5-1号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1797,       30.26633 ] 
+},
+"properties": {
+ "Name": "杭州长庆布衣大药房有限公司",
+"Add": "杭州市长庆街46号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州长庆布衣大药房有限公司<br>地址:  杭州市长庆街46号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.0378,       30.20955 ] 
+},
+"properties": {
+ "Name": "杭州东仁堂医药零售连锁有限公司小和山店",
+"Add": "杭州市留下街道小和山新苑8区2幢",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州东仁堂医药零售连锁有限公司小和山店<br>地址:  杭州市留下街道小和山新苑8区2幢<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2116,       30.29321 ] 
+},
+"properties": {
+ "Name": "杭州东仁堂医药零售连锁有限公司天城路店",
+"Add": "杭州市天城路81号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州东仁堂医药零售连锁有限公司天城路店<br>地址:  杭州市天城路81号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1896,       30.26213 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司大学路店",
+"Add": "杭州市大学路138-140号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司大学路店<br>地址:  杭州市大学路138-140号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1918,       30.34469 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司北景园店",
+"Add": "杭州市北景园回龙路229-3",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司北景园店<br>地址:  杭州市北景园回龙路229-3<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.171,       30.24831 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司吴山店",
+"Add": "杭州市延安路35号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司吴山店<br>地址:  杭州市延安路35号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3445,       30.31151 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司下沙二店",
+"Add": "杭州市白杨街道4号大街591号一层",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司下沙二店<br>地址:  杭州市白杨街道4号大街591号一层<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.182,       30.25619 ] 
+},
+"properties": {
+ "Name": "浙江九洲大药房连锁有限公司泰和分店",
+"Add": "杭州市解放路121号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江九洲大药房连锁有限公司泰和分店<br>地址:  杭州市解放路121号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3009,       30.35505 ] 
+},
+"properties": {
+ "Name": "杭州崇德堂大药房",
+"Add": "杭州市余杭区乔司镇乔莫东路52号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州崇德堂大药房<br>地址:  杭州市余杭区乔司镇乔莫东路52号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1567,       30.28658 ] 
+},
+"properties": {
+ "Name": "浙江英特怡年药房连锁有限公司",
+"Add": "杭州市莫干山路110-6号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江英特怡年药房连锁有限公司<br>地址:  杭州市莫干山路110-6号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1889,        30.2697 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司凤起店",
+"Add": "杭州市凤起路93号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司凤起店<br>地址:  杭州市凤起路93号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1066,       30.28377 ] 
+},
+"properties": {
+ "Name": "浙江天天好大药房连锁有限公司古墩店",
+"Add": "杭州市古墩路353号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江天天好大药房连锁有限公司古墩店<br>地址:  杭州市古墩路353号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1411,       30.28908 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司文二路连锁店",
+"Add": "杭州市文二路225-8、225-9号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司文二路连锁店<br>地址:  杭州市文二路225-8、225-9号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [        120.177,       30.23933 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房有限公司鼓楼连锁店",
+"Add": "杭州市中山南路349号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房有限公司鼓楼连锁店<br>地址:  杭州市中山南路349号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3095,       30.42447 ] 
+},
+"properties": {
+ "Name": "桐庐怡生堂大药房连锁有限公司临平连锁店",
+"Add": "杭州市临平南苑街道逸仙路3-11号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  桐庐怡生堂大药房连锁有限公司临平连锁店<br>地址:  杭州市临平南苑街道逸仙路3-11号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1986,       30.24479 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司近江分店",
+"Add": "杭州市近江路2幢4单元102室",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州华东武林大药房有限公司近江分店<br>地址:  杭州市近江路2幢4单元102室<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1123,       30.30235 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司丰潭路分店",
+"Add": "杭州市三墩镇丰潭路251号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司丰潭路分店<br>地址:  杭州市三墩镇丰潭路251号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1768,       30.25596 ] 
+},
+"properties": {
+ "Name": "杭州汤养元医药有限公司",
+"Add": "杭州市中山中路323号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州汤养元医药有限公司<br>地址:  杭州市中山中路323号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.2025,       30.26321 ] 
+},
+"properties": {
+ "Name": "杭州邵医药店有限公司",
+"Add": "杭州市庆春路3号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州邵医药店有限公司<br>地址:  杭州市庆春路3号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1674,       30.32722 ] 
+},
+"properties": {
+ "Name": "杭州同一大药房有限公司",
+"Add": "杭州市湖州街第一连锁店112号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州同一大药房有限公司<br>地址:  杭州市湖州街第一连锁店112号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1585,       30.27543 ] 
+},
+"properties": {
+ "Name": "杭州海王星辰健康药房有限公司金祝店",
+"Add": "杭州市西湖区体育场路538号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州海王星辰健康药房有限公司金祝店<br>地址:  杭州市西湖区体育场路538号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1827,       30.25676 ] 
+},
+"properties": {
+ "Name": "老百姓大药房连锁（浙江）有限公司解放路店",
+"Add": "杭州市解放路92号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  老百姓大药房连锁（浙江）有限公司解放路店<br>地址:  杭州市解放路92号<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1356,       30.26617 ] 
+},
+"properties": {
+ "Name": "浙江国药大药房东山药店有限公司",
+"Add": "杭州市浙大路7号旁",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  浙江国药大药房东山药店有限公司<br>地址:  杭州市浙大路7号旁<br>类别:  二级乙等</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1682,       30.29194 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司朝晖分店",
+"Add": "杭州市新市街190号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司朝晖分店<br>地址:  杭州市新市街190号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.1659,       30.27543 ] 
+},
+"properties": {
+ "Name": "杭州华东武林大药房有限公司武林路分店",
+"Add": "杭州市武林路438号",
+"Lb": "二级",
+"color": "#8470FF",
+"popup": "<p>名字:  杭州华东武林大药房有限公司武林路分店<br>地址:  杭州市武林路438号<br>类别:  二级</p>" 
+} 
+},
+{
+ "type": "Feature",
+"geometry": {
+ "type": "Point",
+"coordinates": [       120.3049,       30.42294 ] 
+},
+"properties": {
+ "Name": "杭州西洋桥大药房有限公司",
+"Add": "杭州市余杭区临平街道西大街9号",
+"Lb": "二级乙等",
+"color": "#ADFF2F",
+"popup": "<p>名字:  杭州西洋桥大药房有限公司<br>地址:  杭州市余杭区临平街道西大街9号<br>类别:  二级乙等</p>" 
+} 
+} 
+],
+"id": "chartb8058584992" 
+}
+
+  var map = L.map(spec.dom, spec.mapOpts)
+  
+    map.setView(spec.center, spec.zoom);
+
+    if (spec.provider){
+      L.tileLayer.provider(spec.provider).addTo(map)    
+    } else {
+		  L.tileLayer(spec.urlTemplate, spec.layerOpts).addTo(map)
+    }
+     
+    
+    
+    
+    
+    
+    if (spec.circle2){
+      for (var c in spec.circle2){
+        var circle = L.circle(c.center, c.radius, c.opts)
+         .addTo(map);
+      }
+    }
+    
+    
+      var popup = L.popup();
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("<b>Latitude:</b> " + e.latlng.lat.toFixed(2) + "<br />" +
+            "<b>Longitude:</b> " + e.latlng.lng.toFixed(2))
+          .openOn(map);
+      }
+      map.on('click', onMapClick);
+    
+    
+    var geojsonLayer = L.geoJson(spec.features 
+        , 
+         {
+ "onEachFeature":  function(feature, layer){
+           layer.bindPopup(feature.properties.popup)
+           } ,
+"pointToLayer":  function(feature, latlng){
+           return L.circleMarker(latlng, {
+           radius: 5,
+           fillColor: feature.properties.color || 'red', 
+           color: '#000',
+           weight: 1,
+           fillOpacity: 0.8
+           })
+           }  
+}
+      ).addTo(map)
+    
+   
+   
+   
+</script>
+    
+    <script></script>    
+  </body>
+</html>
