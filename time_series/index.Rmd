@@ -159,14 +159,14 @@ m1 <- mPlot(
 )
 m1$set( pointSize = 0, lineWidth = 1)
 m1$set( hideHover = "auto" )
-m1$show("iframesrc", cdn = TRUE)
+m1$show("inline", cdn = TRUE)
 ```
 
 <br/><h4>rickshaw example</h4>
 
 ```{r}
 #get date in format that rickshaw likes
-AQI.HS$date <- as.double(as.POSIXct(AQI.HS$date,origin="1970-01-01"))
+AQI.HS$date <- as.POSIXct(AQI.HS$date,origin="1970-01-01")
 AQI.HS$city<-ifelse(AQI.HS$city=="杭州市","Hangzhou","Shenzheng")
 r1 <- Rickshaw$new()
 r1$layer(
