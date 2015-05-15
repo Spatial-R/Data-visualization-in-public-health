@@ -1,0 +1,230 @@
+---
+title: Time Series Visualization in R  
+subtitle: Air pollution data
+author: Bing Zhang
+github: {user: timelyportfolio, repo: rCharts_time_series, branch: "gh-pages"}
+framework: minimal
+mode: selfcontained
+ext_widgets: {rCharts: ["libraries/morris","libraries/nvd3", "libraries/polycharts", "libraries/highcharts","libraries/xcharts", "libraries/rickshaw"]}
+hitheme: solarized_light
+---
+
+<style>
+.rChart {
+  height: 400px
+}
+</style>
+
+
+As with all of R, the ability to easily chart time series is the result of an iterative progression driven by the collaboration of an extremely dedicated group of open source volunteers.  With the release of [`rCharts`](http://ramnathv.github.io/rCharts),[`dygraph`](http://rstudio.github.io/dygraphs/) I thought it would be interesting to document the timeline of this progression.  For each step in the timeline, I will include a link to the source code (svn or github) of the package and a minimal example to demo the "out-of-the-box" capability.   In another iteration, I will explore more advanced usage of these functions.  
+For a much more extensive discussion of time series analysis with R, please see:
+
+- [Time Series Analysis with R](http://www.stats.uwo.ca/faculty/aim/tsar/tsar.pdf) by A. Ian McLeod, Hao Yu, and Esam Mahdi
+- [CRAN Task View: Time Series Analysis](http://cran.r-project.org/web/views/TimeSeries.html) by Rob Hyndman
+- [A Little Book of R for Time Series](http://a-little-book-of-r-for-time-series.readthedocs.org/en/latest/src/timeseries.html) by Avril Chohlan
+
+-------------------------------------------------------
+
+## Static graph
+
+```{r echo = F, message = F, cache = F}
+options(RCHART_WIDTH = 600, RCHART_HEIGHT = 400)
+knitr::opts_chunk$set(
+  comment = NA,
+  results = 'asis',
+  tidy = F,
+  error = T,
+  message = F,
+  warning = F,
+  fig.width = 8,
+  fig.height = 5,
+  fig.keep = 'last')
+library(rCharts)
+```
+
+First, to build a plot, we need data. For the air quality data, we can obtain it from the [`three ways`](http://spatial-r.github.io/en/2014/06/How-to-get-air-quality-data-from-website/) in my blog. Here, we used the air quality data for the main cities (nearly **113**) in China, 2014. You also can get the data in **my github**[Welcome to **Spatial-R**]. Here is the code to reshape the data and prepare for the plot. 
+```{r,results='markup'}
+library(dplyr);library(reshape);
+AQI<-read.csv("AQI.csv",header=T,stringsAsFactors = F);
+names(AQI)<-c("city","date","aqi","degree","pollutant1","pollutant2","pollutant3")
+AQI<-filter(AQI,aqi>0);AQI<-mutate(AQI,date=as.Date(date));head(AQI)
+```
+
+---
+
+###  Plot Default (For Beijing) 
+
+```{r}
+# base plot of time series prior to xts
+AQI.BJ<-filter(AQI,city=="北京市")
+plot(
+  x = AQI.BJ$date,
+  y = AQI.BJ$aqi,
+  type = "l",
+  xlab = "Date",
+  ylab = "Air quality index",
+  main = "Air quality index in Beijing, 2014"
+)
+```
+
+---
+
+### Package [`ts`](https://stat.ethz.ch/pipermail/r-announce/1999/000097.html)( For Hangzhou)
+The `ts` package (1999-08-27) was added in R version 0.65.0 and significantly improved with release 1.5.0 in April 2002.There is a very good discussion of the improvements in Brian Ripley's ["Time Series in R 1.5.0" from Volume 2 of R News, June 2002](http://cran.r-project.org/doc/Rnews/Rnews_2002-2.pdf).  **ts.plot()** added some nice features, such as the ability to plot multiple/wide time series, specify panels per series, and easily calculate acf, ARIMA,and HoltWinters. 
+
+```{r}
+AQI.HZ<-filter(AQI,city=="杭州市")
+stats::plot.ts(
+  ts(AQI.HZ$aqi,start = c(2014, 1), frequency = 365),
+  xlab = "Date",
+  ylab = "Air quality index",
+  main = "Air quality index in Hangzhou, 2014"
+)
+```
+
+---
+
+### Package [`lattice`](http://r-forge.r-project.org/scm/?group_id=638) and [`grid`](http://www.stat.auckland.ac.nz/~paul/grid/grid.html)
+
+R 1.5.0 (released in 2002-04-29) was a very important milestone for both graphing and time series analysis with the release of `lattice` (Deepayan Sarkar) and `gri`d (Paul Murrell) and also the improvements in `ts` mentioned above. All of these are covered in [Volume 2 of R News, June 2002](http://cran.r-project.org/doc/Rnews/Rnews_2002-2.pdf).  `lattice` using `grid` as its platform began an era of aesthetically pleasing and production-quality graphics straight from R.  
+
+```{r}
+library(ggplot2);library(lattice);
+AQI.tr<-filter(AQI,city %in% c("北京市","杭州市","深圳市"))
+xyplot(
+  aqi ~ date|city,layout = c(1, 3),
+  data = AQI.tr, scales = "free",
+  type = "l",xlab="Date",ylab="Air quality index",
+  main = "Air quality index for Beijing, Hangzhou and Shenzheng city"
+)
+```
+
+---
+
+### Package [`ggplot2`](http://cran.r-project.org/src/contrib/Archive/ggplot2/)( For Wuhan)
+
+Hadley Wickham's 2005 original `ggplot` was significant, but the [2007 rewrite into `ggplot2` 0.5](http://comments.gmane.org/gmane.comp.lang.r.general/86781) completely changed R graphics.  Although `ggplot2` is comprehensive and not designed specifically for time series plotting, I include it in the timeline due to both its significant impact on R graphics and its ability to handle dates/times on the x-axis.  To use xts with `ggplot2`, a simple conversion to a wide or long format data.frame is necessary.
+
+```{r}
+AQI.WH<-filter(AQI,city=="武汉市")
+ggplot(AQI.WH, aes(x=date,y=aqi)) + geom_line() +
+  labs(title = "Air quality index for Wuhan")+
+    xlab("Date")+ylab("Air quality index")+theme_bw(base_family="serif")
+```
+
+---
+
+### Package [`xts`](https://r-forge.r-project.org/scm/viewvc.php/pkg/xts/R/plot.R?root=xts&view=log) (For Shanghai)
+In 2008, despite the various time series options in R, the world of finance demanded more and Jeff Ryan and Joshua Ulrich responded with `xts`.  I strongly recommend reading the [`xts` vignette](http://cran.r-project.org/web/packages/xts/vignettes/xts.pdf) to understand the benefits of `xts`. `xts` ported `plot.zoo()` to its own `plot()` method.  A `xyplot.xts()` was also provided for use with `lattice`.
+
+```{r}
+library(xts)
+AQI.SH<-filter(AQI,city=="上海市")
+XTS.SH<-xts(AQI.SH$aqi,order.by=AQI.SH$date)
+xts::plot.xts(
+  XTS.SH,
+  ylab = "Air quality index",xlab="Date",
+  main = "Air quality index for Shanghai"  
+)
+```
+
+
+---
+
+### [`timeSeries` `plot`](https://r-forge.r-project.org/scm/viewvc.php/pkg/timeSeries/R/methods-plot.R?root=rmetrics&view=log)
+The `timeSeries` `plot()` (2009-05-17) method is basically a port of R's `plot.ts()`.  It does not significantly add any plotting functionality, but I include it for completeness and since the [Rmetrics team](https://www.rmetrics.org) offers robust financial analysis through its many R packages that depend on the `timeSeries` object.
+
+```{r}
+require(timeSeries)
+timeSeries::plot(
+  timeSeries(XTS.SH),
+ylab = "Air quality index",xlab="Date",col = "steelblue",
+  main = "Air quality index for Shanghai"
+)
+```
+
+
+---
+
+### Package [`rCharts`](http://rcharts.github.io/site)
+Although beautiful charts were possible with all the methods above in R, good interactivity was still missing.  `rCharts` released in 2013 by Ramnath Vaidyanathan makes interactive charts straight from R with built-in functionality from frameworks built on top of [`d3.js`](http://d3js.org), [`raphael`](http://raphaeljs.com), and other leading javascript libraries.  This interactivity offers a whole new level of discovery and exploration previously not available with static graphics.  See the examples below.  The examples are only minimal examples to demonstrate how much can be done in a few lines of code.  For more thorough demos, check out the [gallery](http://rcharts.github.io/site/gallery.html).
+
+```{r}
+AQI.HS<-dplyr::filter(AQI,city %in% c("杭州市","深圳市"))[,1:3]
+AQI.RC<-cast(AQI.HS,date~city);AQI.RC$date<-as.character(AQI.RC$date)
+names(AQI.RC)<-c("date","Hangzhou","Shenzheng")
+m1 <- mPlot(
+  x = "date", y = c("Hangzhou","Shenzheng"),
+  data = AQI.RC,
+  type = "Line"
+)
+m1$set( pointSize = 0, lineWidth = 1)
+m1$set( hideHover = "auto" )
+m1$print("chart2")
+```
+
+<br/><h4>rickshaw example</h4>
+
+```{r}
+#get date in format that rickshaw likes
+AQI.HS$date <- as.double(as.POSIXct(AQI.HS$date,origin="1970-01-01"))
+AQI.HS$city<-ifelse(AQI.HS$city=="杭州市","Hangzhou","Shenzheng")
+r1 <- Rickshaw$new()
+r1$layer(
+  aqi~ date,group="city",
+  data = AQI.HS,
+  type = "line"
+)
+r1$set( 
+  slider = TRUE
+)
+r1$print("chart3")
+```
+
+<br/><h4>highcharts example</h4>
+
+```{r}
+#get in UTC format that works best with Highcharts
+AQI.HSW<-dplyr::filter(AQI,city %in% c("杭州市","深圳市","武汉市"))[,1:3]
+AQI.HSW$city<-factor(AQI.HSW$city,levels=c("杭州市","深圳市","武汉市"),
+                     labels=c("Hangzhou","Shenzheng","Wuhan"))
+AQI.HSW$date <- as.numeric(
+  as.POSIXct(AQI.HSW$date, origin="1970-01-01")
+) * 1000
+
+h1 <- hPlot(
+  aqi~ date,group="city",
+  data = AQI.HSW,
+  type = "line"
+)
+
+h1$xAxis(type = "datetime");
+h1$chart(zoomType = "x")
+
+h1$plotOptions(
+  line = list(
+    marker = list(enabled = F)
+  )
+)
+
+h1$print("chart5")
+```
+
+---
+
+## Thanks
+Thanks to all the wonderful and diligent contributors who have made R great.
+
+
+## References
+- http://www.stats.uwo.ca/faculty/aim/tsar/tsar.pdf
+
+- http://cran.r-project.org/web/views/TimeSeries.html
+
+- http://cran.r-project.org/web/packages/zoo/vignettes/zoo.pdf
+
+- http://cran.r-project.org/web/packages/timeSeries/timeSeries.pdf
+
+- http://cran.r-project.org/web/packages/xts/vignettes/xts.pdf
+
+- http://fishyoperations.com/r/timeline-graph-with-ggplot2/
