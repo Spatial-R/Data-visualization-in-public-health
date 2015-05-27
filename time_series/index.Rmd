@@ -1,6 +1,5 @@
 ---
 title: Time Series Visualization in R  
-subtitle: Air pollution data
 author: Bing Zhang
 framework: minimal
 mode: selfcontained
@@ -10,12 +9,13 @@ hitheme: solarized_light
 
 <style>
 .rChart {
-  height: 400px
+  height: 400px;
+  width: 500px
 }
 </style>
 
 
-As with all of R, the ability to easily chart time series is the result of an iterative progression driven by the collaboration of an extremely dedicated group of open source volunteers.  With the release of [`rCharts`](http://ramnathv.github.io/rCharts),[`dygraph`](http://rstudio.github.io/dygraphs/) I thought it would be interesting to document the timeline of this progression.  For each step in the timeline, I will include a link to the source code (svn or github) of the package and a minimal example to demo the "out-of-the-box" capability.   In another iteration, I will explore more advanced usage of these functions.  
+As with all of R, the ability to easily chart time series is the result of an iterative progression driven by the collaboration of an extremely dedicated group of open source volunteers.  With the release of [`rCharts`](http://ramnathv.github.io/rCharts),[`dygraph`](http://rstudio.github.io/dygraphs/) I thought it would be interesting to document the timeline of this progression.  
 For a much more extensive discussion of time series analysis with R, please see:
 
 - [Time Series Analysis with R](http://www.stats.uwo.ca/faculty/aim/tsar/tsar.pdf) by A. Ian McLeod, Hao Yu, and Esam Mahdi
@@ -60,8 +60,7 @@ plot(
   x = AQI.BJ$date,
   y = AQI.BJ$aqi,
   type = "l",
-  xlab = "Date",
-  ylab = "Air quality index",
+  xlab = "Date",ylab = "Air quality index",
   main = "Air quality index in Beijing, 2014"
 )
 ```
@@ -75,8 +74,7 @@ The `ts` package (1999-08-27) was added in R version 0.65.0 and significantly im
 AQI.HZ<-filter(AQI,city=="杭州市")
 stats::plot.ts(
   ts(AQI.HZ$aqi,start = c(2014, 1), frequency = 365),
-  xlab = "Date",
-  ylab = "Air quality index",
+  xlab = "Date",ylab = "Air quality index",
   main = "Air quality index in Hangzhou, 2014"
 )
 ```
@@ -137,7 +135,7 @@ The `timeSeries` `plot()` (2009-05-17) method is basically a port of R's `plot.t
 require(timeSeries)
 timeSeries::plot(
   timeSeries(XTS.SH),
-ylab = "Air quality index",xlab="Date",col = "steelblue",
+  ylab = "Air quality index",xlab="Date",col = "steelblue",
   main = "Air quality index for Shanghai"
 )
 ```
@@ -153,28 +151,12 @@ AQI.RC<-reshape::cast(AQI.HS,date~city);AQI.RC$date<-as.character(AQI.RC$date)
 names(AQI.RC)<-c("date","Hangzhou","Shenzheng")
 m1 <- mPlot(
   x = "date", y = c("Hangzhou","Shenzheng"),
-  data = AQI.RC,
-  type = "Line"
+  data = AQI.RC,type = "Line"
 )
-m1$set( pointSize = 0, lineWidth = 1)
+m1$set(pointSize = 0, lineWidth = 1)
 m1$show("iframesrc", cdn = TRUE)
 ```
 
-<br/><h4>rickshaw example</h4>
-
-```{r}
-#get date in format that rickshaw likes
-AQI.HS$date <- as.POSIXct(AQI.HS$date,origin="1970-01-01")
-AQI.HS$city<-ifelse(AQI.HS$city=="杭州市","Hangzhou","Shenzheng")
-r1 <- Rickshaw$new()
-r1$layer(
-  aqi~ date,group="city",
-  data = AQI.HS,
-  type = "line"
-)
-r1$set(slider = TRUE)
-r1$show("iframesrc", cdn = TRUE)
-```
 
 <br/><h4>highcharts example</h4>
 
@@ -188,18 +170,12 @@ AQI.HSW$date <- as.numeric(
 ) * 1000
 
 h1 <- hPlot(
-  aqi~ date,group="city",
-  data = AQI.HSW,
-  type = "line"
+  aqi~ date,group="city",data = AQI.HSW,type = "line"
 )
 
-h1$xAxis(type = "datetime");
-h1$chart(zoomType = "x")
+h1$xAxis(type = "datetime");h1$chart(zoomType = "x")
 
-h1$plotOptions(
-  line = list(marker = list(enabled = F)
-  )
-)
+h1$plotOptions(line = list(marker = list(enabled = F)))
 
 h1$show("iframesrc", cdn = TRUE)
 ```

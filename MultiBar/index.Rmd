@@ -1,0 +1,35 @@
+---
+title: "PolarHistogram for air pollution"
+author: Bing Zhang
+framework: minimal
+mode: selfcontained
+output: html_document
+---
+
+
+Sometimes we came across multiple cities data and wanted calculate the percentage of different variables. Fox example, we have the air quality data for 113 cities in 2014 and if the air quality index above 50 in the city, the goverment also will give the major air pollutant for the city . Here, we want to  describe the percentages of different major air pollutants. Therefore, the  multiple polar barplot can be used and you can figure out the characteristic of air pollution for 113 cities quickly. All the code is [here](https://github.com/Spatial-R/Data-visualization-in-public-health/tree/gh-pages/MultiBar).
+
+```{r echo = F, message = F, cache = F}
+knitr::opts_chunk$set(
+  comment = NA,results = 'asis',
+  tidy = F,error = T,message = F,warning = F,
+  fig.width = 8,fig.height = 5)
+```
+
+
+```{r echo=T,eval=FALSE}
+library(plyr);library(reshape);library(ggplot2)
+aqi<-read.csv("aqi.csv",header=T,stringsAsFactors = F);
+site<-read.csv("site.csv",header=T,stringsAsFactors = F);
+aqi$city<-factor(aqi$city,levels=c(1:113),labels=site$城市)
+aqi$district<-factor(aqi$district,levels=c(1:7),labels=c("东北","华北",
+                      "华东","华中","华南","西南","西北"))
+aqi[,3:9]<-apply(aqi[,3:9],2,as.numeric)
+source("polarHistogram.R")
+df1=melt(aqi,c("city","district"),variable_name = "score");
+names(df1)=c("item","family","score","value")
+df1$score<-factor(df1$score,levels=c("NO2","PM2.5","SO2","PM10","优","O3","CO"))
+polarHistogram(df1,circleProportion=0.95,familyLabels=T)
+```
+
+<img src= "1.tiff" alt="Drawing" width="750px" align="center" />
