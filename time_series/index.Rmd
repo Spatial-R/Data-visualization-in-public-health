@@ -142,7 +142,6 @@ ylab = "Air quality index",xlab="Date",col = "steelblue",
 )
 ```
 
-
 ---
 
 ### Package [`rCharts`](http://rcharts.github.io/site)
@@ -150,7 +149,7 @@ Although beautiful charts were possible with all the methods above in R, good in
 
 ```{r}
 AQI.HS<-dplyr::filter(AQI,city %in% c("杭州市","深圳市"))[,1:3]
-AQI.RC<-cast(AQI.HS,date~city);AQI.RC$date<-as.character(AQI.RC$date)
+AQI.RC<-reshape::cast(AQI.HS,date~city);AQI.RC$date<-as.character(AQI.RC$date)
 names(AQI.RC)<-c("date","Hangzhou","Shenzheng")
 m1 <- mPlot(
   x = "date", y = c("Hangzhou","Shenzheng"),
@@ -207,6 +206,27 @@ h1$show("iframesrc", cdn = TRUE)
 
 ---
 
+## Package: dygraphs
+
+The dygraphs package is an R interface to the dygraphs JavaScript charting library. It provides rich facilities for charting time-series data in R, including:
+
+  Automatically plots xts time series objects (or any object convertible to xts).  
+   Highly configurable axis and series display (including optional second Y-axis).  
+   Rich interactive features including zoom/pan and series/point highlighting.
+   Display upper/lower bars (e.g. prediction intervals) around series.  
+   Various graph overlays including shaded regions, event lines, and point annotations.  
+
+```{r}
+library(dygraphs);
+AQI.RC<-data.frame(AQI.RC);row.names(AQI.RC)<-as.Date(AQI.RC$date)
+AQI.RC$date<-NULL; names(AQI.RC)<-c("Hangzhou","Shenzheng")
+dygraph(AQI.RC) %>%
+  dySeries("Hangzhou", label = "Hangzhou") %>%
+  dySeries("Shenzheng", label = "Shenzheng") %>%
+  dyOptions(stackedGraph = TRUE) %>%
+  dyRangeSelector(height = 20)
+```
+
 ## Thanks
 Thanks to all the wonderful and diligent contributors who have made R great.
 
@@ -223,3 +243,5 @@ Thanks to all the wonderful and diligent contributors who have made R great.
 - http://cran.r-project.org/web/packages/xts/vignettes/xts.pdf
 
 - http://fishyoperations.com/r/timeline-graph-with-ggplot2/
+
+- http://rstudio.github.io/dygraphs/
