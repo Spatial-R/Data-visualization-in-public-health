@@ -1,5 +1,5 @@
 ---
-title: "PolarHistogram for air pollution"
+title: "PolarHistogram for Air Pollution"
 author: Bing Zhang
 framework: minimal
 mode: selfcontained
@@ -32,4 +32,4 @@ df1$score<-factor(df1$score,levels=c("NO2","PM2.5","SO2","PM10","优","O3","CO")
 polarHistogram(df1,circleProportion=0.95,familyLabels=T)
 ```
 
-<img src= "https://github.com/Spatial-R/Data-visualization-in-public-health/blob/gh-pages/MultiBar/1.png" alt="Drawing" width="750px" align="center" />
+<img src= "1.png" alt="Drawing" width="750px" align="center" />
