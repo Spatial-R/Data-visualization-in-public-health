@@ -1,0 +1,69 @@
+---
+title: "Untitled"
+output: 
+  html_document: 
+    keep_md: yes
+    self_contained: no
+    smart: no
+    theme: cerulean
+---
+
+因为有期待，所以就会有各种偶遇。--- 记[**d3heatmap**](https://github.com/rstudio/d3heatmap)的出世。
+
+------------------------------------------------
+
+## 那年故事
+
+如果没有记错的话，最初接触heatmap是在2010年，当然，故事还得从[R-blogger](http://www.r-bloggers.com/)说起，在此，不得不再次强调下R-bloogger的作用，对于R的新手更是如此。
+回归正题，R-blogger上第一篇关于heatmap的介绍在[此](http://www.r-bloggers.com/how-to-make-a-heat-map-in-r/), [第二篇](http://www.r-bloggers.com/visualizing-likert-items-3/), [第三篇](http://www.r-bloggers.com/revisiting-homicide-rates/)等等。不容否认，heatmap的出现，为**矩阵**和**数据框**可视化开辟了一个新方向。
+
+-------------------------------------------------------------------
+
+## heatmap综述
+
+Heatmap主要分为两大类，静态的(static)和交互式(interactive)。R中实现静态heatmap有很多程序包，如[fheatmap](http://mirrors.ustc.edu.cn/CRAN/web/packages/fheatmap/index.html), [gapmap](http://mirrors.ustc.edu.cn/CRAN/web/packages/gapmap/index.html), [heatmap3](http://mirrors.ustc.edu.cn/CRAN/web/packages/heatmap3/index.html), [heatmap.plus](http://mirrors.ustc.edu.cn/CRAN/web/packages/heatmap.plus/index.html), [mcheatmaps](http://mirrors.ustc.edu.cn/CRAN/web/packages/mcheatmaps/index.html), [NeatMap](http://mirrors.ustc.edu.cn/CRAN/web/packages/NeatMap/index.html), [pheatmap](http://mirrors.ustc.edu.cn/CRAN/web/packages/pheatmap/index.html)。 当然，利用强大的**ggplot2**也可较好地实现heatmap，如[这个](http://blog.sina.com.cn/s/blog_79f2c16f0102uzyy.html)和 [这个](http://www.r-bloggers.com/simplest-possible-heatmap-with-ggplot2/)。研究基因的童鞋，对heatmap一定不陌生，见 [此文](http://blog.sina.com.cn/s/blog_6f139e9f0102v4m1.html)。当然，对于公共卫生领域的朋友，利用heatmap也可以较好地实现数据可视化，如大疫情系统中的面板数据(**panel data**)，多个城市或区县的逐日数据，用heatmap来呈现是相当perfect的。
+
+鉴于网上关于静态heatmap的文章已经很多(随便百度一下，总能出来那么几篇)。在此我介绍交互式hetmap，主要是利用**d3heatmap**和 **rCharts**程序包。
+
+-------------------------------------------------------------------
+
+## **d3heatmap**
+d3heatmap的介绍可见[此](https://github.com/rstudio/d3heatmap),毕竟是Rstudio出品，质量没得说，其除了实现最基本的heatmap功能外，还能:
+
+  1. 点击横坐标或者坐标，进而实现类别高亮(**highlight**)。
+  2. 对特定长或者宽的矩形实现放大(**zoom in**)。
+  3. 可以在Rstudio中结合**Markdown**和**shiny**使用(**reproduced**)。
+  
+废话少说，直接上示例，这个例子你同样可以在这篇[博文](http://www.r-bloggers.com/d3heatmap-interactive-heat-maps/)中找到:
+
+```{r, echo=TRUE}
+library(d3heatmap)
+nba_players<-read.csv("ppg2008.csv",header=T,stringsAsFactors = F)
+row.names(nba_players)<-nba_players$Name;nba_players$Name<-NULL
+d3heatmap(nba_players, scale = "column",color = "Blues")
+```
+
+短短4行代码，轻松实现交互式heatmap，同时还赠送聚类分析结果，真的很实惠。
+
+##  **rCharts**
+在没有d3heatmap前，[rCharts](http://rcharts.io/)是创造交互式heatmap唯一的方式。首先得感谢[Stefan Wilhelm](http://stefan-wilhelm.net/), 在他的[博文](http://stefan-wilhelm.net/interactive-highcharts-heat-maps-in-r-with-rcharts/)中介绍了用R实现交互式heatmap的方法并且附上了详细的代码。当然，其功能和d3heatmap相比，要弱(至于弱在什么地方，读者可自行体验)，但终究是一种不错的方式。当数据超过1000行时，需重新定义turboThreshold参数，具体可见其[博文](http://stefan-wilhelm.net/interactive-highcharts-heat-maps-in-r-with-rcharts/)。示例如下：
+
+```{r echo=TRUE, eval=FALSE,message=FALSE}
+library(dplyr);library(rCharts);library(rjson)
+#load("country.RData")
+dat.f<-dat.f[1:910,];colnames(dat.f) <- c("y","x","value"); 
+    map <- Highcharts$new()
+    map$chart(zoomType = "x", type = 'heatmap')
+    map$title(text='Sales per employee per weekday')
+    map$series(name = 'Sales per employee',data = toJSONArray2(dat.f, json=FALSE))
+    map$yAxis(categories = as.character(c(16071:16080)))
+    map$xAxis(categories = as.character(c(1:91)))
+    map$plotOptions(series=list(turboThreshold = 4000))
+    map$addParams(colorAxis = list(min = 0,minColor='#FFFFFF',maxColor='#7cb5ec'))
+    map$legend(align='right',layout='vertical',margin=0,verticalAlign='top',y=35,symbolHeight=320)
+    map$tooltip(formatter = "#! function() { return '<b>' + this.series.xAxis.categories[this.point.x] + '</b> sold <br><b>' + this.point.value + '</b> items on <br><b>' + this.series.yAxis.categories[this.point.y] + '</b>'; } !#")
+    map$addParams(height = 900, width=800, dom="heatmap")
+```
+
+此处我并没有将country这个数据集公开，但只要读者好好研究StefanWilhelm的那篇博文，实现交互式heatmap并不难，但考虑到d3heatmap程序包的强大，rCharts程序包仅仅只是作为一个辅助方式，所以，你懂的。
+
